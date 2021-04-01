@@ -1,0 +1,36 @@
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: $font, $family;
+  font-size: $browser-context;
+  color: $primary-text;
+}
+
+a { 
+  &, &:link {
+    color:$secundary-color;
+    text-decoration: none;
+  }
+  &:focus { border: none; }
+}
+
+button {
+  border: none;
+  cursor:pointer;
+  //&:focus { outline:$primary-text }
+}
+
+ul, li {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin:0 auto;
+}

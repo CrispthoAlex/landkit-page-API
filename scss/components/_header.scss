@@ -1,0 +1,180 @@
+/*Styles for header component*/
+
+/* Class to fix/sticky the navbar on top when a user scrolls */
+.fixed {
+    position: fixed;
+    background-color: #292929;
+    box-shadow: 0px 20px 50px rgba(215, 228, 249, 0.576);
+    //top:0em;
+    z-index: 10;
+}
+
+.main-header {
+    width: 100%;
+    
+    .navbar {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 10px 0;
+        width: 92.31%;
+        margin: 0 auto;
+        @include responsive-page(mdtop) {
+            justify-content: start;
+            width: 85%;
+        }
+    }
+}
+
+/* Mobile button animation */
+.menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 8.333%;
+    transform:scale(1.5);
+
+    @include responsive-page(mdtop) { display: none; }
+
+    &__line {
+        fill:none;
+        stroke: $primary-color;
+        stroke-width: 6;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        @include responsive-page(mdtop) {
+            transform:scale(0);
+        }
+    }
+    /* Lines behavior Menu Opened */
+    &--opened {
+        .line1 { 
+            stroke: {
+                dasharray: 90 207;
+                dashoffset: -134;
+                width: 6;
+            }
+        }
+        .line2 {
+            stroke: {
+                dasharray: 1 60;
+                dashoffset: -30;
+                width: 6;
+            }
+        }
+        .line3 {
+            stroke: {
+                dasharray: 90 207;
+                dashoffset: -134;
+                width: 6;
+            }
+        }
+        @include responsive-page(mdtop) {
+            display: none;
+        }
+    }
+}
+
+/* Lines behavior Menu Closed */
+.line1, .line2, .line3 {
+  stroke-width: 6;
+}
+.line1 {
+    stroke-dasharray: 60 207;
+}
+.line2 {
+    stroke-dasharray: 60 60;
+}
+.line3 {
+    stroke-dasharray: 60 207;
+}
+
+
+.navigate {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content:space-between ;
+    text-align: center;
+    width: 100%;
+    
+    @include responsive-page(smd) { @include nav-position-responsive(100%) ; }
+            @include responsive-page(md) { @include nav-position-responsive(100%); }
+
+    @include menu-opened ;
+
+    @include responsive-page(mdtop) {
+        flex-flow: row;
+        align-self: center;
+        justify-content: space-evenly;
+        margin-top: 0;
+        max-width: 460px;
+     }
+
+     .navigate-list {
+         display: flex;
+         flex-flow: column;
+         align-items: center;
+         max-width: em(240px);
+         margin-bottom: 10%;
+         width: 100%;
+         
+         @include responsive-page(mdtop) { 
+             flex-flow: row;
+             justify-content: right;
+             max-width: em(526px);
+             margin-bottom: 0;
+         }
+     
+         &__item {
+             margin-bottom: em(48px);
+             width: max-content;
+             font-weight: 900;
+             &:last-child {
+                 margin-bottom: 20%;
+                 @include responsive-page(mdtop) { margin-left:20%; margin-bottom: 0; }
+             }
+             @include responsive-page(mdtop) { margin-bottom: 0; }
+     
+             // Dot animation
+             &--hover {
+                 display: block;
+                 line-height: 1.38889rem;
+                 position: relative;
+                 
+                 &.active {
+                     &::after {
+                         opacity: 1;
+                         bottom: -.5rem;
+                     }
+                     a { color: $primary-color; }
+                 }
+         
+                 &::after {
+                     background: $links-color;
+                     border-radius: 100%;
+                     bottom: -1.5rem;
+                     content: "";
+                     height: 6px;
+                     left: 0;
+                     margin: 0 auto;
+                     opacity: 0;
+                     position: absolute;
+                     right: 0;
+                     transition: all .20s ease;
+                     width: 6px;
+                 }
+                 &:hover {
+                     &::after {
+                         bottom: -.5rem;
+                         opacity: 1;
+                     }
+                 }
+             }
+         }
+     }
+}
+

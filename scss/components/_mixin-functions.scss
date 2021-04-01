@@ -1,0 +1,40 @@
+//  Generals Functions or Methods
+
+// Function to convert px to em
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}
+
+/*
+Funtion to  take any value and strip the unit off
+Useful to conevert px to rem
+*/
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+// 
+@function to-rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($browser-context)}rem;
+}
+
+// Mixins
+
+// Applied for Menu hide
+@mixin nav-position-responsive($width) {
+    position: absolute;
+    order:3;
+    transform: scale(0);
+    // Define width value
+    width: $width;
+}
+
+// Applied to show Navigation links
+@mixin menu-opened {
+    // Active navigate--opened
+    &--opened {
+        position: relative;
+        transform: scale(1);
+        margin-top: 10%;
+        transition: 1s;
+    }
+}

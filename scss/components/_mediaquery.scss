@@ -1,0 +1,15 @@
+/** Mixin for media queries
+    Size applied from https://getbootstrap.com/docs/4.1/layout/grid/
+*/
+
+@mixin responsive-page ($device) {
+    
+    /// @smd : Small and Medium device
+    @if ($device==smd) { @media screen and (max-width: 767px) { @content; } }
+    
+    /// @md: Medium
+    @if ($device==md) { @media screen and (min-width: 768px) and (max-width: 1023px) { @content; } }
+
+    /// @mdtop: Medium and Desktop device
+    @if ($device==mdtop) { @media screen and (min-width: 1024px) { @content; } }
+}

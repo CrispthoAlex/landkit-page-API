@@ -1,0 +1,42 @@
+/*FOOTER SECTION*/
+
+.main-footer {
+    width: 100%;
+    padding-top: 30px;
+    background-color: #{$tertiary-text}35;
+    border-top: 1px solid $secundary-color;
+    
+    &__box {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+}
+
+.whoiam {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 90%;
+    margin: 30px auto ;
+    &__text {
+        margin-bottom: 20px;
+    }
+    &__findme {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 700px;
+        .connect {
+            margin: 0 20px 0 0;
+        }
+    }
+}
+
+.rights {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 90%;
+    padding: 20px 0;
+}
