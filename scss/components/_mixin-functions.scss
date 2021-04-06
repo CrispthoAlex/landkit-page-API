@@ -38,3 +38,15 @@ Useful to conevert px to rem
         transition: 1s;
     }
 }
+
+@mixin section-style {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 92.31%;
+    max-width: 1040px;
+    margin:0 auto;
+}
+
+

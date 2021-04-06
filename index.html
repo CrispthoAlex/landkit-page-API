@@ -7,7 +7,10 @@
   
   <link rel="shortcut icon" type="image/png" sizes="16x16" href="image/favicon.png">
   <title>Landkit. | API Test</title>
-
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+  
   <!-- Styles -->
   <link rel="stylesheet" href="./css/styles.css?v=5.0">
 </head>
@@ -22,7 +25,7 @@
                       <path class="menu-button__line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
                   </svg>
               </button>
-              <div class="logo logo--header" role="logo" aria-label="LaslesVPN logo">
+              <div class="logo logo--header" role="logo" aria-label="Landkit logo">
                 <a href="#" role="Main content link">
                   <img class="logo__img" src="./image/logo.svg" alt="Logo image">
                 </a>
@@ -33,7 +36,7 @@
                           <a href="#preview-blogs">Articles</a>
                       </li>
                       <li class="navigate-list__item navigate-list__item--hover" aria-label="Navigation links">
-                          <a href="#favorites.blogs">Favorites</a>
+                          <a href="#favorites">Favorites</a>
                       </li>
                   </ul>
               </nav>
@@ -48,66 +51,19 @@
             <button class="main-content__search-go">Search</button>
           </div>
           <!-- Preview blogs section -->
-          <section class="preview-blogs">
-
-            <article class="preview-blogs__card">
-              <figure class="preview-blogs__card-img">
-                <img  src="http://placeimg.com/320/205/any" alt="">
-              </figure>
-              <div class="overview">
-                <h3 class="overview__subtitle">Keeping the dream alive by traveling the world.</h3>
-                <p class="overview__paragraph overview__paragraph--preview-blogs">Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform.</p>
-              </div>
-              <div class="preview-blogs__card-footer">
-                <div class="profile">
-                  <img class="profile__img" width="25px" src="https://randomuser.me/api/portraits/women/2.jpg" alt="" class="profile__userimg">
-                  <h4 class="profile__username">alice cooper</h4>
-                </div>
-                <p class="card-date">april 01</p>
-              </div>
-            </article>
-
-            <article class="preview-blogs__card">
-              <figure class="preview-blogs__card-img">
-                <img  src="http://placeimg.com/320/205/any" alt="">
-              </figure>
-              <div class="overview">
-                <h3 class="overview__subtitle">Keeping the dream alive by traveling the world.</h3>
-                <p class="overview__paragraph overview__paragraph--preview-blogs">Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform.</p>
-              </div>
-              <div class="preview-blogs__card-footer">
-                <div class="profile">
-                  <img class="profile__img" width="25px" src="https://randomuser.me/api/portraits/women/2.jpg" alt="" class="profile__userimg">
-                  <h4 class="profile__username">alice cooper</h4>
-                </div>
-                <p class="card-date">april 01</p>
-              </div>
-            </article>
-
-            <article class="preview-blogs__card">
-              <figure class="preview-blogs__card-img">
-                <img  src="http://placeimg.com/320/205/any" alt="">
-              </figure>
-              <div class="overview">
-                <h3 class="overview__subtitle">Keeping the dream alive by traveling the world.</h3>
-                <p class="overview__paragraph overview__paragraph--preview-blogs">Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform. Integrate the latest technologies with an innovative platform.</p>
-              </div>
-              <div class="preview-blogs__card-footer">
-                <div class="profile">
-                  <img class="profile__img" width="25px" src="https://randomuser.me/api/portraits/women/2.jpg" alt="" class="profile__userimg">
-                  <h4 class="profile__username">alice cooper</h4>
-                </div>
-                <p class="card-date">april 01</p>
-              </div>
-            </article>
-
+          <section class="preview-blogs" id="preview-blogs">
+            <!-- Content fully with JS -->
           </section>
-          <!-- Favorite blogs section -->
-          <section class="favorites-blogs">
+          <div class="main-content__load-more js-main-content__load-more">
+            <a class="text" href="">Load More</a>
+            <a class="arrow" href="">&RightArrow;</a>
+          </div>
+          <!-- Favorites blogs section -->
+          <section class="favorites-blogs" id="favorites">
             <p>This section is for favorites blogs</p>
           </section>
 
-          <!-- Current section -->
+          <!-- Current blog section -->
           <section class="current-blog">
             <p>This section is for the current blog that was choosen to read</p>
           </section>
@@ -119,26 +75,13 @@
               <p class="overview__paragraph overview__paragraph--404page">
                 We ran into an issue, but don’t worry, we’ll take care of it for sure.
               </p>
-              <div class="overview__button overview__button--404page"><a href="index.html">Back to safety</a></div>
+              <div class="overview__button overview__button--404page"><a class="overview__button-link overview__button-link--404page" href=".">Back to safety</a></div>
             </div>
             <img class="page404__img" src="./image/img-404.png" alt="404 image">
           </section>
 
-          <div class="main-content__load-more js-main-content__load-more">
-            <a class="text" href="">Load More</a>
-            <a class="arrow" href="">&RightArrow;</a>
-          </div>
       </div>
   </main>
-  <footer>
-      <div class="main-footer">
-          <div class="wrapper">
-              <div class="main-footer__box">
-                <p class="main-footer__box-text">Footer testing</p>
-              </div>    
-          </div>
-      </div>
-  </footer>
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script src="scripts/script.js"></script>

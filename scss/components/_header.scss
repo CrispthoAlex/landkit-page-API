@@ -124,7 +124,7 @@
          
          @include responsive-page(mdtop) { 
              flex-flow: row;
-             justify-content: right;
+             justify-content: flex-end;
              max-width: em(526px);
              margin-bottom: 0;
          }

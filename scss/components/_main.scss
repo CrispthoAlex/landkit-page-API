@@ -69,13 +69,7 @@
 
 /*  BLOG PREVIEW SECTION*/
 .preview-blogs {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 92.31%;
-    max-width: 1040px;
-    margin:0 auto;
+    @include section-style;
 
     @include responsive-page (mdtop) {
         justify-content: space-between;
@@ -93,7 +87,6 @@
             position: relative;
             overflow: hidden;
             margin-bottom: to-rem(31px);
-            background: 10px 10px no-repeat url('../image/star-favorite.svg');
             border-radius: 5px;
             //z-index: -1;
             &::before {
@@ -106,6 +99,32 @@
                 right: to-rem(-15px);
                 box-shadow: 80px 80px 0px 10px white;
             }
+            .pricing, .favorite {
+                position: absolute;
+                top: 18px;
+            }
+            
+            .pricing {
+                background-color: #42BA96;
+                padding: 5px;
+                border-radius: 100px;
+                font-size: 12px;
+                font-weight: 900;
+                line-height: 14px;
+                color:#ffffff;
+                left:20px;
+            }
+            .favorite {
+                right:20px;
+                cursor: pointer;
+                transition: all .2s ease;
+                &.addfav {
+                    path { 
+                        fill: #FFC726; //linear-gradient(43.15deg, #FFC726 3.03%, #F99716 100%);
+                    }
+                }
+            }
+
         }
 
         &-footer {
@@ -169,32 +188,44 @@
 }
 
 /*  FAVORITE SECTION*/
-
+.favorites-blogs {
+    @include section-style;
+}
 
 /*  404 PAGE */
 .overview {
     &--404page {
-        background-color: burlywood;
         text-align: center;
+        @include responsive-page(mdtop) { width:30%;}
     }
     &__subtitle {
-        &--404page { font-weight: 900; }
+        &--404page { font: { size:52px; weight:900; } }
     }
     &__paragraph {
-        &--404page { color:$primary-text; font-weight: 900;}
+        &--404page {
+            color:$fourth-text;
+            font-weight: 900;
+            max-width: 310px;
+        }
     }
     &__button {
-        &--404page { background-color: $primary-color; }
+        &--404page {
+            background-color: $primary-color;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        &-link { &--404page{ color:#ffffff; }}
     }
 }
 
 .page404 {
-    display: flex;
-    flex-flow: wrap;
+    @include section-style;
+
     &__img {
         width: 100%;
         max-width: 590px;
         min-width: 250px;
+        @include responsive-page(mdtop) { width: 70%;}
     }
 }
 
