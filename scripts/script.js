@@ -73,6 +73,7 @@ $(function () {
   let end = new Date()
   let formatDate = months[randomDate(start, end).getMonth()].slice(0, 3) + ' ' + randomDate(start, end).getDate()
   
+  let arrayfavorite = [];
 
   $.ajax({
     url: globalURL + 'posts', // Load the blogs
@@ -92,7 +93,7 @@ $(function () {
         
         $('.preview-blogs').append(
             `<article class="preview-blogs__card" id="post_${post.id}">
-              <figure class="preview-blogs__card-img">
+              <figure class="preview-blogs__card-img" title="Add to Favorites">
                 <p class="pricing">$${price}/MO</p>
                 <svg class="favorite js-favorite" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 6.2c0 .2-.1.4-.3.5l-3.4 3.6.8 5v.2c0 .3-.1.5-.4.5l-.4-.1L8 13.5l-4.3 2.4-.4.1c-.3 0-.4-.2-.4-.5v-.2l.8-5L.2 6.7 0 6.2c0-.3.3-.4.5-.5L5.4 5 7.5.4c.1-.2.3-.4.5-.4s.4.2.5.4L10.6 5l4.9.7c.2 0 .5.2.5.5z" fill="#B4C2D3"/></svg>
                 <img  src="${post.imageBg + imgCard}" alt="">
@@ -124,45 +125,53 @@ $(function () {
       /* Favorite blog */
       let cardlist = document.querySelectorAll('.preview-blogs__card');
       let jsfavlist = document.querySelectorAll('.js-favorite');
-      
-      // console.log(cardlist);
-      // console.log(jsfavlist);
-      let count = 0;
 
-      let arrayfavorite = [];
-
+      let jsfavparent; // Save the clicked parent element
       $(jsfavlist).on('click', function() {
         
         this.classList.toggle('addfav');
-        var parentEls = $( this ).parents().map(function() {
-          return this.className;
-        }).get().join( ", " );
-        console.log('This are jsfav parents:', parentEls);
-        
-        var jsfavparent = $( this ).parents('.preview-blogs__card');
-        console.log('jsfav parents is ...', jsfavparent);
-        
-        console.log('This is ... ', this);
-        addlocalStorage(jsfavparent);
+
+        jsfavparent = $( this ).parents('.preview-blogs__card')[0];
+
+        if (this.classList.contains('addfav')) {
+          $('.favorites-blogs').append( jsfavparent );
+        } else {
+          $('.preview-blogs').prepend( jsfavparent );
+        }
       });
-      
-        /* Funtion to add the objects to the localstorage */
-      function addlocalStorage (jsfavparent) {
-        let existingFavorites = [];
-        // Parse the serialized data back into an array of objects
-        existingFavorites = JSON.parse(localStorage.getItem("arrayfavorite")) || [];
-        // push the new data
-        //existingFavorites.push(jsfavparent);
-
-        console.log('Please, not object', existingFavorites);
-        localStorage.setItem("jsfavparent", JSON.stringify(jsfavparent));
-        // Save entries back to local storage
-        localStorage.setItem("arrayfavorite", JSON.stringify(existingFavorites));
-
-      };
-
     }
   });
+
+  /**
+   * Searching content function
+   * This function search for content on the blogs
+  */
+  $('.js-main-content__search-go').on('click', function () {
+    
+    let input = document.getElementById('search-content').value;
+    input = input.toLowerCase();
+
+    let x = document.getElementsByClassName('overview__paragraph');
+
+    let searchElparent; // save each element to display not
+    for (i = 0; i < x.length ; i++) {
+      
+      if (!x[i].innerHTML.toLowerCase().includes(input)) {
+        searchElparent = $( x[i] ).parents('.preview-blogs__card')[0];
+        $(searchElparent).css('display', 'none') ;
+      }
+    }
+  });
+
+  /* Funtion to add the objects to the localstorage */
+  function addlocalStorage (jsfavparent, arrayfavorite) {
+    // push the new data
+    arrayfavorite.push(jsfavparent);
+
+    //localStorage.setItem("jsfavparent", JSON.stringify(jsfavparent));
+    // Save entries back to local storage
+    localStorage.setItem("arrayfavorite", JSON.stringify(arrayfavorite));
+  };
 
   /* Load more event */
 

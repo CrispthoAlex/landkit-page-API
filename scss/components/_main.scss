@@ -74,6 +74,7 @@
     @include responsive-page (mdtop) {
         justify-content: space-between;
     };
+    
     &__card {
         display: none;
         width: 320px;
@@ -117,14 +118,11 @@
             .favorite {
                 right:20px;
                 cursor: pointer;
-                transition: all .2s ease;
+                transition: all .5s ease;
                 &.addfav {
-                    path { 
-                        fill: #FFC726; //linear-gradient(43.15deg, #FFC726 3.03%, #F99716 100%);
-                    }
+                    path { fill: #FFC726; }
                 }
             }
-
         }
 
         &-footer {
@@ -174,6 +172,7 @@
     &__subtitle {
         color:$tertiary-text;
         margin-bottom: 21px;
+        align-self: flex-start;
     }
     &__paragraph {
         color:$secundary-text;
@@ -190,6 +189,10 @@
 /*  FAVORITE SECTION*/
 .favorites-blogs {
     @include section-style;
+
+    @include responsive-page (mdtop) {
+        justify-content: space-between;
+    };
 }
 
 /*  404 PAGE */
@@ -199,7 +202,10 @@
         @include responsive-page(mdtop) { width:30%;}
     }
     &__subtitle {
-        &--404page { font: { size:52px; weight:900; } }
+        &--404page {
+            align-self: center;
+            font: { size:52px; weight:900; }
+        }
     }
     &__paragraph {
         &--404page {

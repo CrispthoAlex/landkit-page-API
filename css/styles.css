@@ -367,7 +367,7 @@ ul, li {
 .preview-blogs__card-img .favorite {
   right: 20px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
 }
 .preview-blogs__card-img .favorite.addfav path {
   fill: #FFC726;
@@ -419,6 +419,7 @@ ul, li {
 .overview__subtitle {
   color: #161C2D;
   margin-bottom: 21px;
+  align-self: flex-start;
 }
 .overview__paragraph {
   color: #6B7C93;
@@ -441,6 +442,11 @@ ul, li {
   max-width: 1040px;
   margin: 0 auto;
 }
+@media screen and (min-width: 1025px) {
+  .favorites-blogs {
+    justify-content: space-between;
+  }
+}
 
 /*  404 PAGE */
 .overview--404page {
@@ -452,6 +458,7 @@ ul, li {
   }
 }
 .overview__subtitle--404page {
+  align-self: center;
   font-size: 52px;
   font-weight: 900;
 }
