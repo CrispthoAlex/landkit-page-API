@@ -117,11 +117,6 @@ $(function () {
       // show first six elements
       $(".preview-blogs__card").slice(0, 6).show();
 
-      // $.each(posts, function (idx, post) {
-      console.log(
-        posts //.then(response => response.json()[0])
-        );
-      // });
       /* Favorite blog */
       let cardlist = document.querySelectorAll('.preview-blogs__card');
       let jsfavlist = document.querySelectorAll('.js-favorite');
@@ -130,7 +125,7 @@ $(function () {
       $(jsfavlist).on('click', function() {
         
         this.classList.toggle('addfav');
-
+        // Get the innerHTML from parents()
         jsfavparent = $( this ).parents('.preview-blogs__card')[0];
 
         if (this.classList.contains('addfav')) {
@@ -141,6 +136,32 @@ $(function () {
       });
     }
   });
+  let arrsearch = [];
+  /**
+   * Change section:
+   * Click for favorite section, another click return to articles section
+   */
+  // Show only favorite section
+  $('.js-navigate-list__item-favorite').on('click', function () {
+    
+    $('.preview-blogs').css('display','none');
+    $('.favorites-blogs').css('display','flex');
+    $('.main-content__load-more').css('display','none');
+    $('.current-blog').css('display','none');
+    if ( $('.favorites-blogs').children().length === 0 ) {
+      $('.page404').css('display','flex');
+    }
+
+  });
+  // Show only preview section
+  $('.js-navigate-list__item-preview').on('click', function () {
+    $('.preview-blogs').css('display','flex');
+    $('.favorites-blogs').css('display','none');
+    $('.main-content__load-more').css('display','flex');
+    $('.current-blog').css('display','none');
+    $('.page404').css('display','none');
+  });
+  
 
   /**
    * Searching content function
@@ -151,15 +172,18 @@ $(function () {
     let input = document.getElementById('search-content').value;
     input = input.toLowerCase();
 
-    let x = document.getElementsByClassName('overview__paragraph');
+    arrsearch = document.getElementsByClassName('overview__paragraph');
 
     let searchElparent; // save each element to display not
-    for (i = 0; i < x.length ; i++) {
+    for (i = 0; i < arrsearch.length ; i++) {
       
-      if (!x[i].innerHTML.toLowerCase().includes(input)) {
-        searchElparent = $( x[i] ).parents('.preview-blogs__card')[0];
+      if (!arrsearch[i].innerHTML.toLowerCase().includes(input)) {
+        searchElparent = $( arrsearch[i] ).parents('.preview-blogs__card')[0];
         $(searchElparent).css('display', 'none') ;
       }
+    }
+    if (arrsearch.length === 0) {
+      $('.page404').css('display','flex');
     }
   });
 
@@ -176,7 +200,7 @@ $(function () {
   /* Load more event */
 
   $("body").on('click touchstart', '.js-main-content__load-more', function (e) {
-    e.preventDefault();
+    
     $(".preview-blogs__card:hidden").slice(0, 6).slideDown();
     if ($(".preview-blogs__card:hidden").length == 0) {
       $(".main-content__load-more").css('visibility', 'hidden');

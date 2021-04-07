@@ -484,6 +484,7 @@ ul, li {
   width: 92.31%;
   max-width: 1040px;
   margin: 0 auto;
+  display: none;
 }
 .page404__img {
   width: 100%;

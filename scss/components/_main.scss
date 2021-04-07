@@ -226,6 +226,7 @@
 
 .page404 {
     @include section-style;
+    display: none;
 
     &__img {
         width: 100%;
