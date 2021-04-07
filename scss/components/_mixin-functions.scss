@@ -42,7 +42,7 @@ Useful to conevert px to rem
 @mixin section-style {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-evenly;
     width: 92.31%;
     max-width: 1040px;

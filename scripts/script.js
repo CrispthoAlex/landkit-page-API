@@ -92,19 +92,19 @@ $(function () {
         let price = Math.floor(Math.random()*100)
         
         $('.preview-blogs').append(
-            `<article class="preview-blogs__card" id="post_${post.id}">
+            `<article class="preview-blogs__card" id="post_${post.id}" aria-label="Preview blog">
               <figure class="preview-blogs__card-img" title="Add to Favorites">
                 <p class="pricing">$${price}/MO</p>
                 <svg class="favorite js-favorite" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 6.2c0 .2-.1.4-.3.5l-3.4 3.6.8 5v.2c0 .3-.1.5-.4.5l-.4-.1L8 13.5l-4.3 2.4-.4.1c-.3 0-.4-.2-.4-.5v-.2l.8-5L.2 6.7 0 6.2c0-.3.3-.4.5-.5L5.4 5 7.5.4c.1-.2.3-.4.5-.4s.4.2.5.4L10.6 5l4.9.7c.2 0 .5.2.5.5z" fill="#B4C2D3"/></svg>
                 <img  src="${post.imageBg + imgCard}" alt="">
               </figure>
               <div class="overview">
-                <h3 class="overview__subtitle">${post.title}</h3>
-                <p class="overview__paragraph overview__paragraph--preview-blogs">${post.body}</p>
+                <h3 class="overview__subtitle" aria-label="Blog title">${post.title}</h3>
+                <p class="overview__resume overview__resume--preview-blogs" aria-label="Blog content">${post.body}</p>
               </div>
               <div class="preview-blogs__card-footer">
-                <div class="profile">
-                  <img class="profile__img" width="25px" src="https://randomuser.me/api/portraits/${genere}/${post.userId}.jpg" alt="" class="profile__userimg">
+                <div class="profile" aria-label="Blog author">
+                  <img class="profile__img" src="https://randomuser.me/api/portraits/${genere}/${post.userId}.jpg" alt="" class="profile__userimg">
                   <h4 class="profile__username">${post.name}</h4>
                 </div>
                 <p class="card-date">${formatDate}</p>
