@@ -430,6 +430,9 @@ ul, li {
   margin-bottom: 21px;
   align-self: flex-start;
 }
+.overview__subtitle--preview-blogs {
+  cursor: pointer;
+}
 .overview__resume {
   color: #6B7C93;
   width: 100%;
@@ -450,6 +453,7 @@ ul, li {
   width: 92.31%;
   max-width: 1040px;
   margin: 0 auto;
+  display: none;
 }
 @media screen and (min-width: 1025px) {
   .favorites-blogs {
@@ -547,6 +551,9 @@ ul, li {
 .overview--current-blogs {
   font-weight: 900;
 }
+.overview__title--current-blogs {
+  text-align: center;
+}
 .overview__resume--current-blogs {
   text-align: center;
   line-height: 24px;
@@ -558,7 +565,7 @@ ul, li {
   }
 }
 .overview__paragraph--current-blogs {
-  color: #161B2D;
+  text-align: justify;
 }
 
 /*  404 PAGE */
@@ -570,6 +577,7 @@ ul, li {
   width: 92.31%;
   max-width: 1040px;
   margin: 0 auto;
+  align-items: center;
   display: none;
 }
 .page404__img {

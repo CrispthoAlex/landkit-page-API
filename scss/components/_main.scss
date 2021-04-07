@@ -178,6 +178,7 @@
     color:$tertiary-text;
     margin-bottom: 21px;
     align-self: flex-start;
+    &--preview-blogs { cursor:pointer;}
   }
   &__resume {
     color:$secundary-text;
@@ -194,6 +195,7 @@
 /*  FAVORITE SECTION*/
 .favorites-blogs {
   @include section-style;
+  display: none;
 
   @include responsive-page (mdtop) {
     justify-content: space-between;
@@ -271,6 +273,9 @@
   &--current-blogs {
     font-weight: 900;
   }
+  &__title {
+    &--current-blogs { text-align: center; }
+  }
   &__resume {
     &--current-blogs {
       text-align: center;
@@ -283,7 +288,7 @@
     }
   }
   &__paragraph {
-    &--current-blogs { color: $primary-text; }
+    &--current-blogs { text-align: justify }
   }
 }
 
@@ -291,6 +296,7 @@
 /*  404 PAGE */
 .page404 {
   @include section-style;
+  align-items: center;
   display: none;
 
   &__img {
