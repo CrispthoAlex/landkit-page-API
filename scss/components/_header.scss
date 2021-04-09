@@ -3,13 +3,14 @@
 /* Class to fix/sticky the navbar on top when a user scrolls */
 .fixed {
     position: fixed;
-    background-color: #292929;
     box-shadow: 0px 20px 50px rgba(215, 228, 249, 0.576);
-    //top:0em;
+    top:0em;
+    //background-color: #292929;
     z-index: 10;
 }
 
 .main-header {
+    background-color: #ffffff;
     width: 100%;
     
     .navbar {
@@ -23,7 +24,7 @@
         margin: 0 auto;
         @include responsive-page(mdtop) {
             justify-content: start;
-            width: 85%;
+            width: 77%;
         }
     }
 }

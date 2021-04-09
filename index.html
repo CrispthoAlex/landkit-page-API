@@ -47,29 +47,33 @@
   </header>
   <main class="main-content">
       <div class="wrapper">
-          <div class="js-main-content__search main-content__search" aria-label="Information Searching">
-            <svg class="main-content__search-icon " width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.8 13.8l-3.1-3a.7.7 0 00-.6-.3h-.5a6.5 6.5 0 10-1.1 1.1v.5c0 .2 0 .4.2.6l3.1 3c.3.4.8.4 1 0l1-.8c.3-.3.3-.8 0-1zm-9.3-3.3a4 4 0 110-8 4 4 0 010 8z" fill="#869AB8"/></svg>
-            <input class="main-content__search-input" id="search-content" aria-label="Search Bar" type="text" placeholder="Search">
-            <button class="main-content__search-go js-main-content__search-go">Search</button>
+        <div class="principal-section">  
+          <div action="" method="get" class="js-main-content__search main-content__search" aria-label="Information Searching">
+            <svg class="main-content__search-icon " width="19" height="19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.8 13.8l-3.1-3a.7.7 0 00-.6-.3h-.5a6.5 6.5 0 10-1.1 1.1v.5c0 .2 0 .4.2.6l3.1 3c.3.4.8.4 1 0l1-.8c.3-.3.3-.8 0-1zm-9.3-3.3a4 4 0 110-8 4 4 0 010 8z" fill="#869AB8"/>
+            </svg>
+            <input type="text" class="main-content__search-input" id="search-input" aria-label="Search Bar" placeholder="Search">
+            <p class="main-content__search-results" id="search-results" aria-label="Searching results "></p>
+            <input type="submit" class="main-content__search-go js-main-content__search-go" value="Search">
           </div>
+
           <!-- Preview blogs section -->
-          <section class="preview-blogs" id="preview-blogs">
-            <!-- Content fully with JS -->
-          </section>
-          <div class="main-content__load-more js-main-content__load-more">
-            <a class="text" href="">Load More</a>
-            <a class="arrow" href="">&RightArrow;</a>
+          <div class="preview-box">
+            <section class="preview-blogs" id="preview-blogs">
+              <!-- Content fully with JS -->
+            </section>
+
+            <div class="main-content__load-more js-main-content__load-more">
+              <a class="text" href="">Load More</a>
+              <a class="arrow" href="" title="Display All">&RightArrow;</a>
+            </div>
           </div>
+
           <!-- Favorites blogs section -->
           <section class="favorites-blogs" id="favorites">
             <!-- Content fully with the user add favorite blogs -->
           </section>
 
-          <!-- Current blog section -->
-          <section class="current-blog">
-            <!-- Content fully with the user read a blog -->
-          </section>
-          
           <!-- Page not found section -->
           <section class="page404" aria-label="Page not found">
             <div class="overview overview--404page">
@@ -81,7 +85,12 @@
             </div>
             <img class="page404__img" src="./image/img-404.png" alt="404 image">
           </section>
+        </div>  
 
+        <!-- Current blog section -->
+        <section class="current-blog">
+          <!-- Content fully with the user read a blog -->
+        </section>
       </div>
   </main>
   <!-- Scripts -->
