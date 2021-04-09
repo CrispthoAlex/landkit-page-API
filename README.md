@@ -67,6 +67,7 @@ https://api-json-server-deploy.herokuapp.com/
 
 #### **Sections**
 * Search bar
+
 ![image](https://user-images.githubusercontent.com/60373956/114142063-0b9b0a00-98d8-11eb-8a24-5f212802c939.png)
 ![image](https://user-images.githubusercontent.com/60373956/114142220-47ce6a80-98d8-11eb-89dc-76178d5ef1af.png)
 ![image](https://user-images.githubusercontent.com/60373956/114142282-63d20c00-98d8-11eb-9da8-f062cba5c10d.png)
