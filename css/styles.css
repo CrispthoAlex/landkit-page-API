@@ -298,6 +298,7 @@ ul, li {
   padding: 10px 0;
   width: 20%;
   max-width: 84px;
+  min-width: 60px;
   border: none;
 }
 .main-content__load-more {
